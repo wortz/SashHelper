@@ -2,10 +2,10 @@ import React from 'react';
 
 function RenderLevel(props){
     const items = []
-    for (let i=6;i<10;i++)
+    for (let i=9;i>5;i--)
     items.push(<option key={i} value={i}>{"+" + i}</option>)
     return(
-        <select name="itemLevel" onChange={props.onChange}>
+        <select className="itemLevel" onChange={props.onChange}>
             {items}
         </select>
     );

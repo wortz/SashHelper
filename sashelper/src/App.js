@@ -11,8 +11,8 @@ class App extends React.Component {
     this.wrapper = React.createRef();
     this.state={
       weapon:"",
+      itemlevel:9,
       bonus:[],
-      itemlevel:0,
     }
     this.handleChange =this.handleChange.bind(this);
     this.addBonus =this.addBonus.bind(this);
@@ -35,12 +35,6 @@ class App extends React.Component {
       this.setState(temp);
   }
 
-  bonus(){
-    return (this.state.bonus.map((item,i) => (
-      <RenderBonus item={item} key={i} onChange={this.handleChange} />
-    )))
-  }
-
   changeLevel (event) {
     const temp = this.state;
     temp.itemlevel=parseInt(event.target.value);
@@ -58,7 +52,7 @@ class App extends React.Component {
       <div className="App">
           <Weapons onChange={this.changeWeapon}/>
           <RenderLevel onChange={this.changeLevel} />
-          {this.bonus()}
+          <RenderBonus bonus={this.state.bonus} onChange={this.handleChange} />
           <button onClick={this.addBonus}>
             New Bonus
           </button>
