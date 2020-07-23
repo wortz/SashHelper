@@ -5,3 +5,23 @@
 .App-link {
   color: #61dafb;
 }
+
+/* Weapon styling*/
+.weapondiv {
+  margin-top: 1%;
+}
+
+.weapon {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.weaponimg {
+  zoom: 1.5;
+  cursor: pointer;
+}
+
+.weapon:checked + .weaponimg {
+  outline: 2px solid #f00;
+}
