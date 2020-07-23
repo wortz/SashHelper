@@ -1,25 +1,21 @@
 import React from 'react';
+import WeaponsValues from '../StaticValues/WeaponsValues'
 
 
 function Weapons(props){
     return(
         <div className="weapondiv">
-            <label>
-                <input type="radio" className="weapon" name="weapon" value="phoenix bow" onChange={props.onChange}/>
+            {WeaponsValues.map(item => (
+            <label key={item.name}>
+                <input type="radio" className="weapon" name="weapon" value={item.name} onChange={props.onChange}/>
                 <img 
                 className="weaponimg"
-                src="https://en-wiki.metin2.gameforge.com/images/0/09/Phoenix_Bow.png" 
-                alt="Phoenix Bow" 
+                src={item.src} 
+                alt={item.name}
                 />
+                {item.name}
             </label>
-            <label>
-                <input type="radio" className="weapon" name="weapon" value="zodiac bow" onChange={props.onChange}/>
-                <img 
-                className="weaponimg"
-                src="https://en-wiki.metin2.gameforge.com/images/7/7e/Zodiac_Bow.png"
-                alt="Zodiac Bow" 
-                />
-            </label>
+            ))}
         </div>
     )
 }
