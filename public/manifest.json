@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Sash Helper",
+  "name": "Sash Helper for metin2",
   "icons": [
     {
       "src": "icon.png",

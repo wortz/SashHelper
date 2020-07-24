@@ -1,5 +1,5 @@
 import React from 'react';
-import bonuses from '../StaticValues/WeaponBonuses'
+import bonuses from '../../StaticValues/WeaponBonuses'
 
 function RenderBonus(props){
   const bonusesOption = []
@@ -16,6 +16,9 @@ function RenderBonus(props){
         <input type="text" placeholder="Valor do Bonus" value={item.bonus1} onChange={e => props.onChange(e,i,1)} />
       </div>
     ))}
+      <button onClick={() => props.addBonus(bonuses[0])}>
+        New Bonus
+      </button>
     </div>
   );
 }

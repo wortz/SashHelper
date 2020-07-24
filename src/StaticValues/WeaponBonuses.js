@@ -1,4 +1,6 @@
 const bonuses=[
+    "Average Damage",
+    "Skill Damage",
     "Devils",
     "Undead",
     "Animals",
@@ -16,8 +18,6 @@ const bonuses=[
     "Bleeding Attack",
     "Slowing Chance",
     "Spell Speed",
-    "Average Damage",
-    "Skill Damage",
 ];
 
 export default bonuses;

@@ -1,5 +1,5 @@
 import React from 'react';
-import WeaponsValues from '../StaticValues/WeaponsValues'
+import WeaponsValues from '../../StaticValues/WeaponsValues'
 
 
 function Weapons(props){
