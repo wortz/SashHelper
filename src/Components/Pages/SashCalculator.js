@@ -29,34 +29,34 @@ class SashCalculator extends React.Component{
     }
 
     handleChange(event, index, bonus) {
-        const temp = this.state;
+        const temp = this.state.bonus.map(a => ({...a}));
         if(bonus)
-          temp.bonus[index].bonus=event.target.value;
+          temp[index].bonus=event.target.value;
         else
-          temp.bonus[index].name=event.target.value;
-        this.setState(temp);
+          temp[index].name=event.target.value;
+        this.setState({bonus:temp});
     }
     
     addBonus(firstBonus){
-          const temp = this.state;
-          temp.bonus.push({name:firstBonus,bonus:0,});
-          this.setState(temp);
+          const temp = this.state.bonus.map(a => ({...a}));
+          temp.push({name:firstBonus,bonus:0,});
+          this.setState({bonus:temp});
     }
     
     changeLevel (event) {
-        const temp = this.state;
-        temp.itemlevel=parseInt(event.target.value);
-        this.setState(temp);
+        let temp = this.state.itemlevel;
+        temp=parseInt(event.target.value);
+        this.setState({itemlevel:temp});
     }
     
     changeWeapon (event) {
-        const temp = this.state;
-        temp.weapon=event.target.value;
-        this.setState(temp);
+        let temp = this.state.weapon;
+        temp=event.target.value;
+        this.setState({weapon:temp});
     }
 
     calculateBonus(){
-      var bonus = this.state.bonus;
+      const bonus = this.state.bonus.map(a => ({...a}));
       this.state.bonus.forEach((element,i) => {
         let newValue = 0;
         if(element.bonus > 0){
