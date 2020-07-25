@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "274674949cb6394d93ea213ea24a1642",
+    "revision": "acf13d76c5578408d9eb12869c70da8f",
     "url": "/SashHelper/index.html"
   },
   {
-    "revision": "753835961f7977d2141a",
+    "revision": "1cf35c21765b27907452",
     "url": "/SashHelper/static/css/main.39d7c652.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SashHelper/static/js/2.3b48d8fd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "753835961f7977d2141a",
-    "url": "/SashHelper/static/js/main.c6717cae.chunk.js"
+    "revision": "1cf35c21765b27907452",
+    "url": "/SashHelper/static/js/main.0166eb69.chunk.js"
   },
   {
     "revision": "88cac71b85388ea05628",
