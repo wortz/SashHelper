@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import SashCalculator from './Components/Pages/SashCalculator'
+import SashCalculator from './Components/Objects/SashCalculator'
 
 function App() {
     return (

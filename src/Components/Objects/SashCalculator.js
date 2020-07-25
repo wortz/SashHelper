@@ -3,6 +3,7 @@ import RenderBonus from '../Elements/Bonus'
 import RenderLevel from '../Elements/Level'
 import Weapons from '../Elements/Weapons'
 import RenderSashPercentage from '../Elements/Sash';
+import FinalValues from './FinalValues'
 
 class SashCalculator extends React.Component{
     constructor(props){
@@ -13,6 +14,7 @@ class SashCalculator extends React.Component{
             weapon:"",
             itemlevel:9,
             bonus:[],
+            showFinal:false,
         }
         this.changePercentage =this.changePercentage.bind(this);
         this.handleChange =this.handleChange.bind(this);
@@ -23,9 +25,9 @@ class SashCalculator extends React.Component{
     }
 
     changePercentage(event) {
-        const temp = this.state;
-        temp.sashPercentage = event.target.value;
-        this.setState(temp);
+        let temp = this.state.sashPercentage;
+        temp = event.target.value;
+        this.setState({sashPercentage:temp});
     }
 
     handleChange(event, index, bonus) {
@@ -56,17 +58,7 @@ class SashCalculator extends React.Component{
     }
 
     calculateBonus(){
-      const bonus = this.state.bonus.map(a => ({...a}));
-      this.state.bonus.forEach((element,i) => {
-        let newValue = 0;
-        if(element.bonus > 0){
-          newValue = Math.floor(this.state.sashPercentage * element.bonus / 100.0);
-          if(newValue===0)
-            newValue++;
-        }
-        bonus[i].bonus=newValue;
-      });
-      console.log(bonus);
+      this.setState({showFinal:true});
     }
 
     render(){
@@ -79,6 +71,9 @@ class SashCalculator extends React.Component{
               <button onClick={this.calculateBonus}>
                 Calculate Final Values
               </button>
+              {this.state.showFinal &&
+              <FinalValues original={this.state} />
+              }
           </div>
         );
       }
