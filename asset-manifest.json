@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/SashHelper/static/css/main.daea4db9.chunk.css",
-    "main.js": "/SashHelper/static/js/main.83cf78a5.chunk.js",
-    "main.js.map": "/SashHelper/static/js/main.83cf78a5.chunk.js.map",
+    "main.css": "/SashHelper/static/css/main.9b407638.chunk.css",
+    "main.js": "/SashHelper/static/js/main.b0fbf76a.chunk.js",
+    "main.js.map": "/SashHelper/static/js/main.b0fbf76a.chunk.js.map",
     "runtime-main.js": "/SashHelper/static/js/runtime-main.a53c91a4.js",
     "runtime-main.js.map": "/SashHelper/static/js/runtime-main.a53c91a4.js.map",
-    "static/js/2.9ab81d56.chunk.js": "/SashHelper/static/js/2.9ab81d56.chunk.js",
-    "static/js/2.9ab81d56.chunk.js.map": "/SashHelper/static/js/2.9ab81d56.chunk.js.map",
+    "static/js/2.3b48d8fd.chunk.js": "/SashHelper/static/js/2.3b48d8fd.chunk.js",
+    "static/js/2.3b48d8fd.chunk.js.map": "/SashHelper/static/js/2.3b48d8fd.chunk.js.map",
     "index.html": "/SashHelper/index.html",
-    "precache-manifest.936593449525496c4ae2551ebca62b50.js": "/SashHelper/precache-manifest.936593449525496c4ae2551ebca62b50.js",
+    "precache-manifest.f09e006abc28d3db15a699d3c1bd76cd.js": "/SashHelper/precache-manifest.f09e006abc28d3db15a699d3c1bd76cd.js",
     "service-worker.js": "/SashHelper/service-worker.js",
-    "static/css/main.daea4db9.chunk.css.map": "/SashHelper/static/css/main.daea4db9.chunk.css.map",
-    "static/js/2.9ab81d56.chunk.js.LICENSE.txt": "/SashHelper/static/js/2.9ab81d56.chunk.js.LICENSE.txt"
+    "static/css/main.9b407638.chunk.css.map": "/SashHelper/static/css/main.9b407638.chunk.css.map",
+    "static/js/2.3b48d8fd.chunk.js.LICENSE.txt": "/SashHelper/static/js/2.3b48d8fd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a53c91a4.js",
-    "static/js/2.9ab81d56.chunk.js",
-    "static/css/main.daea4db9.chunk.css",
-    "static/js/main.83cf78a5.chunk.js"
+    "static/js/2.3b48d8fd.chunk.js",
+    "static/css/main.9b407638.chunk.css",
+    "static/js/main.b0fbf76a.chunk.js"
   ]
 }
