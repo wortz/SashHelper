@@ -13,7 +13,7 @@ function RenderBonus(props){
         <select name="bonuses" onChange={e => props.onChange(e,i,0)}>
           {bonusesOption}
         </select>
-        <input type="text" placeholder="Valor do Bonus" value={item.bonus1} onChange={e => props.onChange(e,i,1)} />
+        <input type="text" placeholder="Valor do Bonus" value={item.bonus} onChange={e => props.onChange(e,i,1)} />
       </div>
     ))}
       <button onClick={() => props.addBonus(bonuses[0])}>

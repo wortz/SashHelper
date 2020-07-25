@@ -2,59 +2,51 @@ const WeaponsValues = [
     {   name: "Zodiac Bow",
         src: "https://en-wiki.metin2.gameforge.com/images/7/7e/Zodiac_Bow.png",
         values: [
-            {
-                minAttValue:311,
-                maxAttValue:510,
-                attSpeed:24,
-            },
-            {
-                minAttValue:348,
-                maxAttValue:547,
-                attSpeed:25,
-            },
-            {
-                minAttValue:404,
-                maxAttValue:603,
-                attSpeed:26,
-            },
-            {
-                minAttValue:487,
-                maxAttValue:686,
-                attSpeed:27,
-            },
+            [
+                {name:"Attack Value", bonus:[311,510]},
+                {name:"Attack Speed", bonus:24},
+            ],
+            [
+                {name:"Attack Value", bonus:[348,547]},
+                {name:"Attack Speed", bonus:25},
+            ],
+            [
+                {name:"Attack Value", bonus:[404,603]},
+                {name:"Attack Speed", bonus:26},
+            ],
+            [
+                {name:"Attack Value", bonus:[487,686]},
+                {name:"Attack Speed", bonus:27},
+            ],
         ]
     },
     {   name: "Phoenix Bow",
         src: "https://en-wiki.metin2.gameforge.com/images/0/09/Phoenix_Bow.png",
         values: [
-            {
-                minAttValue:311,
-                maxAttValue:510,
-                attSpeed:24,
-                halfhuman:8,
-                monsters:4
-            },
-            {
-                minAttValue:348,
-                maxAttValue:547,
-                attSpeed:25,
-                halfhuman:10,
-                monsters:4
-            },
-            {
-                minAttValue:404,
-                maxAttValue:603,
-                attSpeed:26,
-                halfhuman:12,
-                monsters:5
-            },
-            {
-                minAttValue:487,
-                maxAttValue:686,
-                attSpeed:27,
-                halfhuman:15,
-                monsters:5
-            },
+            [
+                {name:"Attack Value", bonus:[311,510]},
+                {name:"Attack Speed", bonus:24},
+                {name:"Half Humans", bonus:8},
+                {name:"Strength against monsters", bonus:4},
+            ],
+            [
+                {name:"Attack Value", bonus:[348,547]},
+                {name:"Attack Speed", bonus:25},
+                {name:"Half Humans", bonus:10},
+                {name:"Strength against monsters", bonus:4},
+            ],
+            [
+                {name:"Attack Value", bonus:[404,603]},
+                {name:"Attack Speed", bonus:26},
+                {name:"Half Humans", bonus:12},
+                {name:"Strength against monsters", bonus:5},
+            ],
+            [
+                {name:"Attack Value", bonus:[487,686]},
+                {name:"Attack Speed", bonus:27},
+                {name:"Half Humans", bonus:15},
+                {name:"Strength against monsters", bonus:5},
+            ],
         ]
     }
 ];

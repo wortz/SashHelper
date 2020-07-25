@@ -14,20 +14,18 @@ class SashCalculator extends React.Component{
             weapon:"",
             itemlevel:9,
             bonus:[],
-            showFinal:false,
         }
         this.changePercentage =this.changePercentage.bind(this);
         this.handleChange =this.handleChange.bind(this);
         this.addBonus =this.addBonus.bind(this);
         this.changeLevel =this.changeLevel.bind(this);
         this.changeWeapon =this.changeWeapon.bind(this);
-        this.calculateBonus =this.calculateBonus.bind(this);
     }
 
     changePercentage(event) {
         let temp = this.state.sashPercentage;
         temp = event.target.value;
-        this.setState({sashPercentage:temp});
+        this.setState({sashPercentage:temp,updateFinal:false});
     }
 
     handleChange(event, index, bonus) {
@@ -41,7 +39,7 @@ class SashCalculator extends React.Component{
     
     addBonus(firstBonus){
           const temp = this.state.bonus.map(a => ({...a}));
-          temp.push({name:firstBonus,bonus:0,});
+          temp.push({name:firstBonus,bonus:""});
           this.setState({bonus:temp});
     }
     
@@ -57,10 +55,6 @@ class SashCalculator extends React.Component{
         this.setState({weapon:temp});
     }
 
-    calculateBonus(){
-      this.setState({showFinal:true});
-    }
-
     render(){
         return (
           <div className="SashCalculator">
@@ -68,12 +62,7 @@ class SashCalculator extends React.Component{
               <Weapons onChange={this.changeWeapon}/>
               <RenderLevel onChange={this.changeLevel} />
               <RenderBonus bonus={this.state.bonus} onChange={this.handleChange} addBonus={this.addBonus} />
-              <button onClick={this.calculateBonus}>
-                Calculate Final Values
-              </button>
-              {this.state.showFinal &&
               <FinalValues original={this.state} />
-              }
           </div>
         );
       }
