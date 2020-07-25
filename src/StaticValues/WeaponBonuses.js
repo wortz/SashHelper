@@ -9,7 +9,7 @@ const bonuses=[
     "Mystic",
     "Intelligence",
     "Strength",
-    "Agility",
+    "Dexterity",
     "Vitality",
     "Piercing Hit",
     "Critical Hit",
@@ -17,7 +17,7 @@ const bonuses=[
     "Blackout Chance",
     "Bleeding Attack",
     "Slowing Chance",
-    "Spell Speed",
+    "Casting Speed",
 ];
 
 export default bonuses;

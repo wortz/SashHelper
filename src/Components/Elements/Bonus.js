@@ -4,7 +4,7 @@ import bonuses from '../../StaticValues/WeaponBonuses'
 function RenderBonus(props){
   const bonusesOption = []
   bonuses.forEach((element,i) => {
-    if(i>2 || props.avg)
+    if(i>1 || props.avg)
       bonusesOption.push(<option key={element} value={element}>{element}</option>)
   });
   return (
@@ -17,7 +17,7 @@ function RenderBonus(props){
         <input type="text" placeholder="Valor do Bonus" value={item.bonus} onChange={e => props.onChange(e,i,1)} />
       </div>
     ))}
-      <button onClick={() => props.addBonus(bonuses[0])}>
+      <button onClick={() => props.addBonus(props.avg ? bonuses[0] : bonuses[2])}>
         New Bonus
       </button>
     </div>
