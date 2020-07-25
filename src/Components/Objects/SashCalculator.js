@@ -12,6 +12,7 @@ class SashCalculator extends React.Component{
         this.state={
             sashPercentage: "",
             weapon:"",
+            avg:false,
             itemlevel:9,
             bonus:[],
         }
@@ -25,7 +26,7 @@ class SashCalculator extends React.Component{
     changePercentage(event) {
         let temp = this.state.sashPercentage;
         temp = event.target.value;
-        this.setState({sashPercentage:temp,updateFinal:false});
+        this.setState({sashPercentage:temp});
     }
 
     handleChange(event, index, bonus) {
@@ -38,9 +39,13 @@ class SashCalculator extends React.Component{
     }
     
     addBonus(firstBonus){
-          const temp = this.state.bonus.map(a => ({...a}));
-          temp.push({name:firstBonus,bonus:""});
-          this.setState({bonus:temp});
+        if(this.state.bonus.length >=5)
+            alert("The maximum number of bonus is 5.");
+        else {
+            const temp = this.state.bonus.map(a => ({...a}));
+            temp.push({name:firstBonus,bonus:""});
+            this.setState({bonus:temp});
+        }
     }
     
     changeLevel (event) {
@@ -49,10 +54,10 @@ class SashCalculator extends React.Component{
         this.setState({itemlevel:temp});
     }
     
-    changeWeapon (event) {
+    changeWeapon (event, avg) {
         let temp = this.state.weapon;
         temp=event.target.value;
-        this.setState({weapon:temp});
+        this.setState({weapon:temp,avg:avg});
     }
 
     render(){
@@ -61,7 +66,7 @@ class SashCalculator extends React.Component{
               <RenderSashPercentage sashPercentage={this.state.sashPercentage} onChange={this.changePercentage}/>
               <Weapons onChange={this.changeWeapon}/>
               <RenderLevel onChange={this.changeLevel} />
-              <RenderBonus bonus={this.state.bonus} onChange={this.handleChange} addBonus={this.addBonus} />
+              <RenderBonus bonus={this.state.bonus} onChange={this.handleChange} addBonus={this.addBonus} avg={this.state.avg} />
               <FinalValues original={this.state} />
           </div>
         );

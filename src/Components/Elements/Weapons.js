@@ -7,7 +7,7 @@ function Weapons(props){
         <div className="weapondiv">
             {WeaponsValues.map(item => (
             <label key={item.name}>
-                <input type="radio" className="weapon" name="weapon" value={item.name} onChange={props.onChange}/>
+                <input type="radio" className="weapon" name="weapon" value={item.name} onChange={e => props.onChange(e,item.avg)}/>
                 <img 
                 className="weaponimg"
                 src={item.src} 

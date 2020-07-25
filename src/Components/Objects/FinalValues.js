@@ -23,7 +23,6 @@ class FinalValues extends React.Component{
     }
 
     calculateValues() {
-        console.log(this.props.original)
         const weaponbonus=this.getWeaponValues();
         const bonus=(weaponbonus.concat(this.props.original.bonus)).map(a => ({...a}));
         for (let index = 0; index < bonus.length; index++) {
@@ -40,7 +39,6 @@ class FinalValues extends React.Component{
             else 
                 bonus[index].bonus=this.calculateValue(element.bonus, this.props.original.sashPercentage);
         };
-        console.log(bonus);
         this.setState({bonus:bonus})
     }
 

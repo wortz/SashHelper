@@ -3,8 +3,9 @@ import bonuses from '../../StaticValues/WeaponBonuses'
 
 function RenderBonus(props){
   const bonusesOption = []
-  bonuses.forEach(element => {
-    bonusesOption.push(<option key={element} value={element}>{element}</option>)
+  bonuses.forEach((element,i) => {
+    if(i>2 || props.avg)
+      bonusesOption.push(<option key={element} value={element}>{element}</option>)
   });
   return (
     <div className="Bonuses">

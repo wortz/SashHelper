@@ -36,12 +36,3 @@
 .weapon:checked + .weaponimg {
   outline: 2px solid #f00;
 }
-
-/* Final Values Table styling*/
-
-.rwd-table {
-  background: #34495E;
-  color: #fff;
-  border-radius: .4em;
-  border-color: black;
-}
