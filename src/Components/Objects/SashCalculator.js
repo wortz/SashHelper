@@ -4,6 +4,8 @@ import RenderLevel from '../Elements/Level'
 import Weapons from '../Elements/Weapons'
 import RenderSashPercentage from '../Elements/Sash';
 import FinalValues from './FinalValues'
+import checkPresence from '../Utility/Utility'
+import bonuses from '../../StaticValues/WeaponBonuses'
 
 class SashCalculator extends React.Component{
     constructor(props){
@@ -57,7 +59,19 @@ class SashCalculator extends React.Component{
     changeWeapon (event, avg) {
         let temp = this.state.weapon;
         temp=event.target.value;
-        this.setState({weapon:temp,avg:avg});
+        let bonusAux = this.state.bonus;
+        if(!avg){
+            let specialBonus = checkPresence(bonusAux, [bonuses[0],bonuses[1]]);
+            specialBonus.forEach(element => {
+                for(let index=2; index<bonuses.length; index++){
+                    if(checkPresence(bonusAux,[bonuses[index]]).length === 0){
+                        bonusAux[element]={name:bonuses[index], bonus:""};
+                        break;
+                    }
+                }
+            });
+        }
+        this.setState({weapon:temp,avg:avg,bonus:bonusAux});
     }
 
     render(){
