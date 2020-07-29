@@ -15,9 +15,9 @@ function Weapons(props){
                         alt={item.name}
                         />
                 </label>
-                <label>
-                    {item.name}
-                </label>
+            <label className="weaponName">
+                {item.name}
+            </label>
             </div>
             ))}
         </div>

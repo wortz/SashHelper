@@ -1,9 +1,10 @@
 .SashCalculator {
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto auto auto auto auto auto;
   justify-content: space-around;
   justify-items: center;
+  font-family: 'Patua One', cursive;
 }
 
 /*Sash Percentage styling*/
@@ -15,8 +16,18 @@
   grid-column: 1 / span 3;
 }
 
+.SashPercentage > input{
+  max-width: 75%;
+  font-stretch: normal;
+  font-family: 'Patua One', cursive;
+  text-align: center;
+}
+
 .sashimg {
-  zoom:1.75;
+    justify-self: normal;
+    max-width: 80px;
+    height: auto;
+    width: 70%;
 }
 
 /* Weapon styling*/
@@ -44,22 +55,24 @@
 }
 
 .weaponimg {
-  zoom: 1.75;
+  width: 60%;
+  max-width: 50px;
+  height: auto;
   cursor: pointer;
 }
 
-.weaponselector:checked + .weaponimg {
-  outline: 1.5px solid #f00;
+.weaponselector:checked + .weaponimg{
+  outline: 2px solid #f00;
 }
 
 /*Item Level styling*/
 .itemLevel {
   grid-row: 4/span 1;
   grid-column: 1/span 3;
-  width: 25%;
+  width: 30%;
   display: flex;
   justify-items: center;
-  margin: 2rem 0 1vh;
+  margin: 2rem 0 1rem;
 }
 
 /*Bonuses styling*/
@@ -73,36 +86,54 @@
 }
 
 .Bonuses > button {
+  width: 50%;
+  align-self: center;
   margin: 1rem 0;
 }
 
-.Bonuses > .SingleBonus {
+.SingleBonus {
   margin: 0 0 0.5rem 0;
+}
+
+.SingleBonus > select {
+  max-width: 40%;
+}
+
+.SingleBonus > input{
+  max-width: 30%;
+  font-family: 'Patua One', cursive;
+  font-stretch: normal;
 }
 
 /*Final values styling*/
 .FinalValues {
   display: grid;
-  grid-row: 1/span 6;
-  grid-column: 4/span 3;
-  text-align: center;
+  grid-row: 6/span 3;
+  grid-column: 1/span 3;
+  grid-template-columns: auto;
   grid-template-rows: auto auto auto;
-  align-items: center;
 }
 
 .ValuesTablediv {
   grid-row: span 2;
+  margin: 10% 0;
 }
 
 .CalculateButton {
-  background: #00ff00;
+  grid-column: span 3;  
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  border: 2px solid #df0909;
+  outline:none;
 }
 
 .FinalValuesTable {
+  width: auto;
+  height: 100%;
   border-collapse: separate;
   background:#fff;
   border-radius: 5px;
-  margin: 50px auto;
   box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
 }
 
@@ -112,22 +143,19 @@
 
 .FinalValuesTable > thead th {
   font-family: 'Patua One', cursive;
-  font-size:16px;
-  font-weight:400;
+  padding: 10%;
+  font-size:100%;
   color:#fff;
   text-shadow:1px 1px 0px rgba(0,0,0,0.5);
-  text-align:left;
-  padding:20px;
+  text-align:center;
   background-image:linear-gradient(#646f7f, #4a5564);
   border-top:1px solid #858d99;
 }
 
 .FinalValuesTable > tbody tr td {
   font-family: 'Open Sans', sans-serif;
-  font-weight:400;
   color:#5f6062;
-  font-size:13px;
-  padding:20px 20px 20px 20px;
+  font-size:100%;
   border-bottom:1px solid #e0e0e0;
   
 }
@@ -138,11 +166,7 @@
 
 .FinalValuesTable > tbody tr:last-child td {
   border-bottom:none;
-}:first-child {
-    border-bottom-left-radius:5px;
-  }:last-child {
-    border-bottom-right-radius:5px;
-  }
+}
 
 .FinalValuesTable > tbody:hover > tr:hover td {
   text-shadow:none;
