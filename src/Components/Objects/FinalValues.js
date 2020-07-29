@@ -67,13 +67,10 @@ class FinalValues extends React.Component{
 
     render(){
         return (
-            <div>
-                <button onClick={this.clickCalculateButton}>
-                    Calculate Final Values
-                </button>
+            <div className="FinalValues">
+                <div className="ValuesTablediv">
                 {this.state.bonus.length>0 &&
-                <div className="FinalValues">
-                    <table className="rwd-table">
+                    <table className="FinalValuesTable">
                         <thead>
                             <tr>
                                 <th>Bonus</th>
@@ -89,8 +86,11 @@ class FinalValues extends React.Component{
                             ))}
                         </tbody>
                     </table>
-                </div>
                 }
+                </div>
+                <button onClick={this.clickCalculateButton} className="CalculateButton">
+                    Calculate Final Values
+                </button>
             </div>
         );
       };
