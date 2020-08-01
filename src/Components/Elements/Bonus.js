@@ -2,6 +2,8 @@ import React from 'react';
 import bonuses from '../../StaticValues/WeaponBonuses'
 import checkPresence from '../Utility/Utility'
 
+
+
 function RenderBonus(props){
   const bonusesAvailable = bonuses.slice(props.avg ? 0 : 2);
   const bonusesOption = [];
@@ -15,18 +17,19 @@ function RenderBonus(props){
       bonusesOption.push(<option key={element} value={element}>{element}</option>)
   };
 
-  return (
+  return ( 
     <div className="Bonuses">
       {props.bonus.map((item,i) => (
-      <div className="SingleBonus" key={i}>
-        <select name="bonuses" onChange={e => props.onChange(e,i,0)}>
+      <div className="SingleBonus" key={item.name}>
+        <select className="BonSpace" name="bonuses" onChange={e => props.onChange(e,i,0)}>
           <option key={item.name} value={item.name}>{item.name}</option>
           {bonusesOption}
         </select>
-        <input type="text" placeholder="Bonus Value" value={item.bonus} onChange={e => props.onChange(e,i,1)} />
+        <input className="BonSpace" type="text" placeholder="Bonus Value" value={item.bonus} onChange={e => props.onChange(e,i,1)} />
+        <button className="btn BonSpace RemoveButton" onClick={() => props.removeBonus(i)}><i className="fa fa-trash fa-2x" ></i></button>
       </div>
     ))}
-      <button onClick={() => props.addBonus(bonusesAvailable[0])}>
+      <button className="AddBonusButton" onClick={() => props.addBonus(bonusesAvailable[0])}>
         New Bonus
       </button>
     </div>

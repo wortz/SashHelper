@@ -85,7 +85,19 @@
   text-align: center;
 }
 
-.Bonuses > button {
+.BonSpace {
+  margin: 0 0.5%;
+}
+
+.RemoveButton {
+  cursor: pointer;
+  color: #df0909;
+  background: none;
+  border: none;
+}
+
+.AddBonusButton {
+  cursor: pointer;
   width: 50%;
   align-self: center;
   margin: 1rem 0;
@@ -126,6 +138,7 @@
   border-radius: 5px;
   border: 2px solid #df0909;
   outline:none;
+  cursor: pointer;
 }
 
 .FinalValuesTable {

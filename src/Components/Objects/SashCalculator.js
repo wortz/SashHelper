@@ -22,6 +22,7 @@ class SashCalculator extends React.Component{
         this.handleChange =this.handleChange.bind(this);
         this.addBonus =this.addBonus.bind(this);
         this.changeLevel =this.changeLevel.bind(this);
+        this.removeBonus =this.removeBonus.bind(this);
         this.changeWeapon =this.changeWeapon.bind(this);
     }
 
@@ -48,6 +49,12 @@ class SashCalculator extends React.Component{
             temp.push({name:firstBonus,bonus:""});
             this.setState({bonus:temp});
         }
+    }
+
+    removeBonus(index){
+        const temp = this.state.bonus.map(a => ({...a}));
+        temp.splice(index,1);
+        this.setState({bonus:temp});
     }
     
     changeLevel (event) {
@@ -80,7 +87,7 @@ class SashCalculator extends React.Component{
               <RenderSashPercentage sashPercentage={this.state.sashPercentage} onChange={this.changePercentage}/>
               <Weapons onChange={this.changeWeapon}/>
               <RenderLevel onChange={this.changeLevel} />
-              <RenderBonus bonus={this.state.bonus} onChange={this.handleChange} addBonus={this.addBonus} avg={this.state.avg} />
+              <RenderBonus bonus={this.state.bonus} onChange={this.handleChange} addBonus={this.addBonus} avg={this.state.avg} removeBonus={this.removeBonus} />
               <FinalValues original={this.state} />
           </div>
         );
