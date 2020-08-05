@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/SashHelper/static/css/main.97cbf766.chunk.css",
-    "main.js": "/SashHelper/static/js/main.5940e573.chunk.js",
-    "main.js.map": "/SashHelper/static/js/main.5940e573.chunk.js.map",
+    "main.css": "/SashHelper/static/css/main.661fe2de.chunk.css",
+    "main.js": "/SashHelper/static/js/main.87d50075.chunk.js",
+    "main.js.map": "/SashHelper/static/js/main.87d50075.chunk.js.map",
     "runtime-main.js": "/SashHelper/static/js/runtime-main.a53c91a4.js",
     "runtime-main.js.map": "/SashHelper/static/js/runtime-main.a53c91a4.js.map",
     "static/js/2.3b48d8fd.chunk.js": "/SashHelper/static/js/2.3b48d8fd.chunk.js",
     "static/js/2.3b48d8fd.chunk.js.map": "/SashHelper/static/js/2.3b48d8fd.chunk.js.map",
     "index.html": "/SashHelper/index.html",
-    "precache-manifest.0d485bc3630721402a48f8697842f5c6.js": "/SashHelper/precache-manifest.0d485bc3630721402a48f8697842f5c6.js",
+    "precache-manifest.23a898521b2c79c07b26e51f7ed4c62b.js": "/SashHelper/precache-manifest.23a898521b2c79c07b26e51f7ed4c62b.js",
     "service-worker.js": "/SashHelper/service-worker.js",
-    "static/css/main.97cbf766.chunk.css.map": "/SashHelper/static/css/main.97cbf766.chunk.css.map",
+    "static/css/main.661fe2de.chunk.css.map": "/SashHelper/static/css/main.661fe2de.chunk.css.map",
     "static/js/2.3b48d8fd.chunk.js.LICENSE.txt": "/SashHelper/static/js/2.3b48d8fd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a53c91a4.js",
     "static/js/2.3b48d8fd.chunk.js",
-    "static/css/main.97cbf766.chunk.css",
-    "static/js/main.5940e573.chunk.js"
+    "static/css/main.661fe2de.chunk.css",
+    "static/js/main.87d50075.chunk.js"
   ]
 }
