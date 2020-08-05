@@ -29,9 +29,7 @@ function RenderBonus(props){
         <button className="btn BonSpace RemoveButton" onClick={() => props.removeBonus(i)}><i className="fa fa-trash fa-2x" ></i></button>
       </div>
     ))}
-      <button className="AddBonusButton" onClick={() => props.addBonus(bonusesAvailable[0])}>
-        New Bonus
-      </button>
+      <button className="AddBonusButton" onClick={() => props.addBonus(bonusesAvailable[0])} />
     </div>
   );
 }

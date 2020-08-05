@@ -1,6 +1,7 @@
 import React from 'react';
 import RenderBonus from '../Elements/Bonus'
 import RenderLevel from '../Elements/Level'
+import ElementalBonus from '../Elements/ElementalBonus'
 import Weapons from '../Elements/Weapons'
 import RenderSashPercentage from '../Elements/Sash';
 import FinalValues from './FinalValues'
@@ -16,14 +17,19 @@ class SashCalculator extends React.Component{
             weapon:"",
             avg:false,
             itemlevel:9,
+            elemental:"",
+            elementalAttack:"",
             bonus:[],
         }
         this.changePercentage =this.changePercentage.bind(this);
-        this.handleChange =this.handleChange.bind(this);
+        this.handleChangeBonus =this.handleChangeBonus.bind(this);
         this.addBonus =this.addBonus.bind(this);
         this.changeLevel =this.changeLevel.bind(this);
         this.removeBonus =this.removeBonus.bind(this);
         this.changeWeapon =this.changeWeapon.bind(this);
+        this.handleChangeElemental =this.handleChangeElemental.bind(this);
+        this.addElemental =this.addElemental.bind(this);
+        this.removeElemental =this.removeElemental.bind(this);
     }
 
     changePercentage(event) {
@@ -32,7 +38,31 @@ class SashCalculator extends React.Component{
         this.setState({sashPercentage:temp});
     }
 
-    handleChange(event, index, bonus) {
+    handleChangeElemental(event, bonus){
+        const temp = this.state.elemental;
+        if(bonus===1){
+            temp.bonus=event.target.value;
+            this.setState({elemental:temp});
+        }
+        if(bonus===0){
+            temp.name=event.target.value;
+            this.setState({elemental:temp});
+        }
+        else
+            this.setState({elementalAttack:event.target.value});
+    }
+
+    addElemental(firstBonus){
+        let temp = this.state.elemental;
+        temp={name:firstBonus,bonus:""};
+        this.setState({elemental:temp});
+    }
+
+    removeElemental(){
+        this.setState({elemental:""});
+    }
+
+    handleChangeBonus(event, index, bonus) {
         const temp = this.state.bonus.map(a => ({...a}));
         if(bonus)
           temp[index].bonus=event.target.value;
@@ -87,7 +117,9 @@ class SashCalculator extends React.Component{
               <RenderSashPercentage sashPercentage={this.state.sashPercentage} onChange={this.changePercentage}/>
               <Weapons onChange={this.changeWeapon}/>
               <RenderLevel onChange={this.changeLevel} />
-              <RenderBonus bonus={this.state.bonus} onChange={this.handleChange} addBonus={this.addBonus} avg={this.state.avg} removeBonus={this.removeBonus} />
+              <ElementalBonus elemental={this.state.elemental} onChange={this.handleChangeElemental} addElemental={this.addElemental} removeElemental={this.removeElemental} 
+              elementalAttack={this.state.elementalAttack}/>
+              <RenderBonus bonus={this.state.bonus} onChange={this.handleChangeBonus} addBonus={this.addBonus} avg={this.state.avg} removeBonus={this.removeBonus} />
               <FinalValues original={this.state} />
           </div>
         );

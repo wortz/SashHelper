@@ -7,6 +7,7 @@ class FinalValues extends React.Component{
         super(props);
         this.state={
             bonus:[],
+            elementalAttack:"",
         };
         this.calculateValues =this.calculateValues.bind(this);
         this.calculateValue =this.calculateValue.bind(this);
@@ -14,9 +15,11 @@ class FinalValues extends React.Component{
         this.clickCalculateButton =this.clickCalculateButton.bind(this);
     };
 
-    calculateValue(bonus, percentage) {
+    calculateValue(bonus) {
+        if(bonus===0 || bonus==="")
+            return 0;
         let newValue = 0;
-        newValue = Math.floor(percentage * bonus / 100.0);
+        newValue = Math.floor(this.props.original.sashPercentage * bonus / 100.0);
         if(newValue===0)
             newValue++;
         return newValue;
@@ -24,12 +27,16 @@ class FinalValues extends React.Component{
 
     calculateValues() {
         const weaponbonus=this.getWeaponValues();
-        const bonus=(weaponbonus.concat(this.props.original.bonus)).map(a => ({...a}));
+        const elementalAttack="(+" + this.calculateValue(parseInt(this.props.original.elementalAttack)) + ")";
+        const elemental=this.props.original.elemental;
+        var bonus = weaponbonus.map(a => ({...a}));
+        bonus.push(Object.assign({},elemental));
+        bonus=bonus.concat(this.props.original.bonus);
         for (let index = 0; index < bonus.length; index++) {
             const element = bonus[index];
             if(Array.isArray(element.bonus)){
-                let min = this.calculateValue(element.bonus[0], this.props.original.sashPercentage);
-                let max = this.calculateValue(element.bonus[1], this.props.original.sashPercentage);
+                let min = this.calculateValue(element.bonus[0]);
+                let max = this.calculateValue(element.bonus[1]);
                 bonus[index].bonus=min + "-" + max;
             }
             else if(element.bonus<=0 || isNaN(element.bonus)){
@@ -37,9 +44,9 @@ class FinalValues extends React.Component{
                 index--;
             }
             else 
-                bonus[index].bonus=this.calculateValue(element.bonus, this.props.original.sashPercentage);
+                bonus[index].bonus=this.calculateValue(element.bonus);
         };
-        this.setState({bonus:bonus})
+        this.setState({bonus:bonus,elementalAttack:elementalAttack});
     }
 
     getWeaponValues() {
@@ -81,7 +88,8 @@ class FinalValues extends React.Component{
                             {this.state.bonus.map((element,i) => (
                             <tr key={i}>
                                 <td data-th="Bonus">{element.name}</td>
-                                <td data-th="FinalValue">{element.bonus}</td>
+                                
+                                <td data-th="FinalValue">{element.bonus}{this.state.elementalAttack!==0 && element.name ==="Attack Value" ? this.state.elementalAttack : null}</td>
                             </tr>
                             ))}
                         </tbody>
