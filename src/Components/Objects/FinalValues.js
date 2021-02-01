@@ -89,7 +89,7 @@ class FinalValues extends React.Component{
                             <tr key={i}>
                                 <td data-th="Bonus">{element.name}</td>
                                 
-                                <td data-th="FinalValue">{element.bonus}{this.state.elementalAttack!==0 && element.name ==="Attack Value" ? this.state.elementalAttack : null}</td>
+                                <td data-th="FinalValue">{element.bonus}{this.state.elementalAttack!=='(+NaN)' && element.name ==="Attack Value" ? this.state.elementalAttack : null}</td>
                             </tr>
                             ))}
                         </tbody>
