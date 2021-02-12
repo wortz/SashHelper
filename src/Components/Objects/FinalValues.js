@@ -27,13 +27,16 @@ class FinalValues extends React.Component{
 
     calculateValues() {
         const weaponbonus=this.getWeaponValues();
-        const elementalAttack="(+" + this.calculateValue(parseInt(this.props.original.elementalAttack)) + ")";
+        var elementalAttack
+        if(this.props.original.elementalAttack > 0 && this.props.original.elementalAttack !== 0)
+            elementalAttack="(+" + this.calculateValue(parseInt(this.props.original.elementalAttack)) + ")";
         const elemental=this.props.original.elemental;
         var bonus = weaponbonus.map(a => ({...a}));
         bonus.push(Object.assign({},elemental));
-        bonus=bonus.concat(this.props.original.bonus);
+        bonus=bonus.concat(this.props.original.bonus.map(a => ({...a})));
         for (let index = 0; index < bonus.length; index++) {
             const element = bonus[index];
+            console.log(element)
             if(Array.isArray(element.bonus)){
                 let min = this.calculateValue(element.bonus[0]);
                 let max = this.calculateValue(element.bonus[1]);
@@ -89,7 +92,7 @@ class FinalValues extends React.Component{
                             <tr key={i}>
                                 <td data-th="Bonus">{element.name}</td>
                                 
-                                <td data-th="FinalValue">{element.bonus}{this.state.elementalAttack!=='(+NaN)' && element.name ==="Attack Value" ? this.state.elementalAttack : null}</td>
+                                <td data-th="FinalValue">{element.bonus}{this.state.elementalAttack}</td>
                             </tr>
                             ))}
                         </tbody>

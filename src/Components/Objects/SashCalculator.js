@@ -44,7 +44,7 @@ class SashCalculator extends React.Component{
             temp.bonus=event.target.value;
             this.setState({elemental:temp});
         }
-        if(bonus===0){
+        else if(bonus===0){
             temp.name=event.target.value;
             this.setState({elemental:temp});
         }

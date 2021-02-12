@@ -29,7 +29,7 @@ function RenderBonus(props){
         <button className="btn BonSpace RemoveButton" onClick={() => props.removeBonus(i)}><i className="fa fa-trash fa-2x" ></i></button>
       </div>
     ))}
-      <button className="AddBonusButton" onClick={() => props.addBonus(bonusesAvailable[0])} />
+      {props.bonus.length < 5 ? <button className="AddBonusButton" onClick={() => props.addBonus(bonusesAvailable[0])} /> : null}
     </div>
   );
 }
