@@ -36,7 +36,6 @@ class FinalValues extends React.Component{
         bonus=bonus.concat(this.props.original.bonus.map(a => ({...a})));
         for (let index = 0; index < bonus.length; index++) {
             const element = bonus[index];
-            console.log(element)
             if(Array.isArray(element.bonus)){
                 let min = this.calculateValue(element.bonus[0]);
                 let max = this.calculateValue(element.bonus[1]);
@@ -62,6 +61,7 @@ class FinalValues extends React.Component{
     }
 
     clickCalculateButton(){
+        console.log(this.props.original.bonus);
         if(this.props.original.sashPercentage === "")
             alert("The Sash Percentage to have a value.");
         else if(isNaN(this.props.original.sashPercentage))
@@ -70,6 +70,21 @@ class FinalValues extends React.Component{
             alert("You need to select a weapon.");
         else if(this.props.original.sashPercentage >25 || this.props.original.sashPercentage <=0 )
             alert("The Sash Percentage needs to be between 0 and 25.");
+        else if(isNaN(this.props.original.elementalAttack) && this.props.original.elementalAttack === "")
+            alert("The Elemental Attack needs to be a number.");
+        else if(isNaN(this.props.original.elemental.bonus) && this.props.original.elemental.bonus === "")
+            alert("The Elemental Bonus needs to be a number.");
+        else if(this.props.original.bonus.every(e => isNaN(e.bonus)))
+            alert("All bonuses need to be a number.");
+        else if(this.props.original.elementalAttack<=0 && this.props.original.elementalAttack!=="")
+            alert("The Elemental Attack needs to be greater than 0.")
+        else if(this.props.original.elemental.bonus<=0 && this.props.original.elemental.bonus!=="")
+            alert("The Elemental bonus needs to be greater than 0.")
+        else if(this.props.original.elemental.bonus!=="" && this.props.original.elemental.bonus==="")
+            alert("If Elemental Attack is assigned, then you must assign a Elemental Bonus.")
+        else if(this.props.original.elemental.bonus==="" && this.props.original.elemental.bonus!=="")
+            alert("If Elemental Bonus is assigned, then you must assign a Elemental Attack.")
+
         else
             this.calculateValues();
       }
@@ -92,7 +107,7 @@ class FinalValues extends React.Component{
                             <tr key={i}>
                                 <td data-th="Bonus">{element.name}</td>
                                 
-                                <td data-th="FinalValue">{element.bonus}{this.state.elementalAttack}</td>
+                                <td data-th="FinalValue">{element.bonus}{element.name==="Attack Value" ? this.state.elementalAttack : null}</td>
                             </tr>
                             ))}
                         </tbody>
