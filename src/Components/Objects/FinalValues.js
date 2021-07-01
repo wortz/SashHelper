@@ -74,15 +74,15 @@ class FinalValues extends React.Component{
             alert("The Elemental Attack needs to be a number.");
         else if(isNaN(this.props.original.elemental.bonus) && this.props.original.elemental.bonus === "")
             alert("The Elemental Bonus needs to be a number.");
-        else if(this.props.original.bonus.every(e => isNaN(e.bonus)))
+        else if(!this.props.original.bonus.every(e => !isNaN(e.bonus)))
             alert("All bonuses need to be a number.");
         else if(this.props.original.elementalAttack<=0 && this.props.original.elementalAttack!=="")
             alert("The Elemental Attack needs to be greater than 0.")
         else if(this.props.original.elemental.bonus<=0 && this.props.original.elemental.bonus!=="")
             alert("The Elemental bonus needs to be greater than 0.")
-        else if(this.props.original.elemental.bonus!=="" && this.props.original.elemental.bonus==="")
+        else if(this.props.original.elementalAttack!=="" && this.props.original.elemental.bonus==="")
             alert("If Elemental Attack is assigned, then you must assign a Elemental Bonus.")
-        else if(this.props.original.elemental.bonus==="" && this.props.original.elemental.bonus!=="")
+        else if(this.props.original.elementalAttack==="" && this.props.original.elemental.bonus!=="")
             alert("If Elemental Bonus is assigned, then you must assign a Elemental Attack.")
 
         else

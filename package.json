@@ -20,7 +20,7 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "Shash Helper"
+    "extends": "Sash Helper"
   },
   "browserslist": {
     "production": [
