@@ -9,7 +9,7 @@ function ElementalBonus(props){
 
     return (
         <div className="ElementalBonus">
-            {props.elemental !== "" ? (
+            {props.elemental.name !== "" ? (
             <div>
                 <label>Attack Value: </label>
                 <input className="BonSpace" type="text" placeholder="Bonus Value" value={props.elemental.elementalAttack} onChange={e => props.onChange(e,2)} />

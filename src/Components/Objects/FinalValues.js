@@ -61,7 +61,7 @@ class FinalValues extends React.Component{
     }
 
     clickCalculateButton(){
-        console.log(this.props.original.bonus);
+        console.log(this.props.original);
         if(this.props.original.sashPercentage === "")
             alert("The Sash Percentage to have a value.");
         else if(isNaN(this.props.original.sashPercentage))
@@ -84,7 +84,6 @@ class FinalValues extends React.Component{
             alert("If Elemental Attack is assigned, then you must assign a Elemental Bonus.")
         else if(this.props.original.elementalAttack==="" && this.props.original.elemental.bonus!=="")
             alert("If Elemental Bonus is assigned, then you must assign a Elemental Attack.")
-
         else
             this.calculateValues();
       }

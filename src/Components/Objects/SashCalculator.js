@@ -17,7 +17,7 @@ class SashCalculator extends React.Component{
             weapon:"",
             avg:false,
             itemlevel:9,
-            elemental:"",
+            elemental:{name:"", bonus:""},
             elementalAttack:"",
             bonus:[],
         }
